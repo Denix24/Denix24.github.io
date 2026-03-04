@@ -1,124 +1,513 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-<title>Dennis Bofah | Informatics Portfolio</title>
-
-<style>
-
-body{
-font-family: Arial;
-margin:0;
-background:#f5f7fa;
-color:#333;
-}
-
-header{
-background:#1f4e79;
-color:white;
-text-align:center;
-padding:50px;
-}
-
-section{
-padding:40px;
-max-width:900px;
-margin:auto;
-}
-
-.project{
-background:white;
-padding:25px;
-margin-bottom:25px;
-border-radius:10px;
-box-shadow:0px 3px 10px rgba(0,0,0,0.1);
-}
-
-h2{
-color:#1f4e79;
-}
-
-footer{
-background:#1f4e79;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dennis Bofah | Informatics Portfolio</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1b33;
+      --muted:#9fb0d0;
+      --text:#eaf0ff;
+      --accent:#5aa7ff;
+      --accent2:#6ee7b7;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 14px 40px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(90,167,255,.18), transparent 55%),
+                  radial-gradient(900px 600px at 80% 15%, rgba(110,231,183,.12), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1100px; margin:0 auto; padding:28px 18px 64px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:10px 0 24px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 0 6px rgba(90,167,255,.12);
+    }
+    .nav{
+      display:flex; flex-wrap:wrap; gap:10px;
+      justify-content:flex-end;
+    }
+    .chip{
+      border:1px solid var(--border);
+      padding:8px 12px; border-radius:999px;
+      background:rgba(255,255,255,.03);
+      font-size:14px;
+    }
+    .chip:hover{background:rgba(255,255,255,.06)}
+    .hero{
+      display:grid; grid-template-columns:1.25fr .75fr;
+      gap:18px; align-items:stretch;
+      margin-top:10px;
+    }
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+    .title{
+      font-size:40px; line-height:1.15; margin:0 0 10px;
+      letter-spacing:-.6px;
+    }
+    .subtitle{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:16px;
+    }
+    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin:12px 0 0}
+    .pill{
+      background:rgba(90,167,255,.10);
+      border:1px solid rgba(90,167,255,.25);
+      color:#d8e9ff;
+      padding:8px 10px; border-radius:10px;
+      font-size:13px;
+    }
+    .cta{
+      display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.05);
+      color:var(--text);
+      font-weight:650;
+      font-size:14px;
+      cursor:pointer;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(90,167,255,.95), rgba(110,231,183,.65));
+      border:1px solid rgba(255,255,255,.18);
+      color:#071022;
+    }
+    .btn:hover{filter:brightness(1.06)}
+    .meta{
+      display:grid; gap:10px;
+      font-size:14px;
+    }
+    .meta div{
+      padding:12px 12px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:rgba(255,255,255,.03);
+    }
+    .meta b{display:block; margin-bottom:3px}
+    h2{
+      margin:30px 0 12px;
+      font-size:22px;
+      letter-spacing:-.2px;
+    }
+    .grid{
+      display:grid; gap:14px;
+      grid-template-columns:repeat(12, 1fr);
+    }
+    .col-6{grid-column:span 6}
+    .col-4{grid-column:span 4}
+    .col-8{grid-column:span 8}
+    .col-12{grid-column:span 12}
+    @media (max-width:900px){
+      .col-6,.col-4,.col-8{grid-column:span 12}
+    }
+    .section-card{
+      padding:18px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+    }
+    .muted{color:var(--muted)}
+    .kpi{
+      display:flex; align-items:flex-start; gap:10px;
+      padding:14px; border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+    }
+    .kpi .badge{
+      width:28px; height:28px; border-radius:10px;
+      background:rgba(110,231,183,.14);
+      border:1px solid rgba(110,231,183,.28);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:800; color:#ccffe9;
+      flex:0 0 auto;
+    }
+    .proj{
+      padding:18px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:rgba(15,27,51,.55);
+    }
+    .proj h3{margin:0 0 8px; font-size:18px}
+    .proj .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .tag{
+      font-size:12px;
+      padding:6px 8px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      color:#dbe6ff;
+    }
+    .twoCol{
+      display:grid; grid-template-columns:1fr 1fr; gap:12px;
+    }
+    @media (max-width:900px){ .twoCol{grid-template-columns:1fr} }
+    .callout{
+      border-left:4px solid rgba(90,167,255,.9);
+      padding:12px 14px;
+      border-radius:12px;
+      background:rgba(90,167,255,.08);
+      border-top:1px solid rgba(255,255,255,.10);
+      border-right:1px solid rgba(255,255,255,.10);
+      border-bottom:1px solid rgba(255,255,255,.10);
+      margin-top:10px;
+    }
+    footer{
+      margin-top:38px;
+      padding-top:18px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:13px;
+      display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    }
+    .small{font-size:13px}
+    code.inline{
+      background:rgba(255,255,255,.06);
+      padding:2px 6px;
+      border-radius:8px;
+      border:1px solid var(--border);
+      font-size:12px;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="wrap">
+    <!-- Top nav -->
+    <div class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Dennis Bofah</span>
+      </div>
+      <div class="nav">
+        <a class="chip" href="#about">About</a>
+        <a class="chip" href="#capstone">Capstone</a>
+        <a class="chip" href="#projects">Projects</a>
+        <a class="chip" href="#skills">Skills</a>
+        <a class="chip" href="#contact">Contact</a>
+      </div>
+    </div>
 
-<header>
+    <!-- Hero -->
+    <div class="hero">
+      <div class="card">
+        <h1 class="title">Informatics Portfolio</h1>
+        <p class="subtitle">
+          Master of Professional Studies in Informatics (Northeastern University) •
+          Data Engineering • Analytics • Cloud Solutions
+        </p>
 
-<h1>Dennis Bofah</h1>
+        <div class="pillrow">
+          <span class="pill">Python</span>
+          <span class="pill">SQL</span>
+          <span class="pill">R</span>
+          <span class="pill">ETL / Pipelines</span>
+          <span class="pill">Dashboards</span>
+          <span class="pill">GCP</span>
+          <span class="pill">Privacy-by-Design</span>
+        </div>
 
-<p>Data Engineering | Cloud Analytics | Informatics</p>
+        <div class="cta">
+          <!-- Replace the # links with your real links -->
+          <a class="btn primary" href="#capstone">View Capstone</a>
+          <a class="btn" href="#projects">Project Highlights</a>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
 
-</header>
+        <div class="callout small">
+          Tip: This portfolio is designed for employers. It explains what I built, why it matters, and the skills demonstrated.
+        </div>
+      </div>
 
-<section>
+      <div class="card">
+        <div class="meta">
+          <div>
+            <b>Current Focus</b>
+            Building analytics dashboards and data pipelines with secure cloud deployment patterns.
+          </div>
+          <div>
+            <b>Capstone</b>
+            HVALIDATE — privacy-preserving clinical validation dashboard for presenteeism analytics.
+          </div>
+          <div>
+            <b>Career Direction</b>
+            Data Engineering / Analytics Engineering / Cloud Data Platforms.
+          </div>
+        </div>
+      </div>
+    </div>
 
-<h2>About Me</h2>
+    <!-- About -->
+    <h2 id="about">About Me</h2>
+    <div class="grid">
+      <div class="section-card col-8">
+        <p>
+          I am a Master of Professional Studies in Informatics student at Northeastern University with a background
+          in Electrical and Electronics Engineering. My interests sit at the intersection of analytics, data engineering
+          and cloud-based information systems that support evidence-based decision making.
+        </p>
+        <p>
+          Throughout my graduate coursework, I strengthened my skills in <b>Python</b>, <b>SQL</b> and <b>R</b>, and
+          applied them to build practical deliverables such as data pipelines, dashboards and validation workflows.
+          I am especially interested in building systems that are not only accurate and scalable, but also
+          <b>governed</b> and <b>secure</b> by design.
+        </p>
+        <p class="muted small">
+          Portfolio note: Some project data is synthetic where required (privacy and confidentiality), while the engineering approach and logic reflect real-world design decisions.
+        </p>
+      </div>
 
-<p>
+      <div class="section-card col-4">
+        <div class="kpi">
+          <div class="badge">1</div>
+          <div>
+            <b>Strengths</b>
+            Analytics pipelines, dashboarding, structured problem-solving.
+          </div>
+        </div>
+        <div style="height:10px"></div>
+        <div class="kpi">
+          <div class="badge">2</div>
+          <div>
+            <b>Values</b>
+            Reliability, privacy, clear communication, continuous improvement.
+          </div>
+        </div>
+        <div style="height:10px"></div>
+        <div class="kpi">
+          <div class="badge">3</div>
+          <div>
+            <b>Learning</b>
+            Cloud deployment, IAM concepts, and privacy-preserving analytics patterns.
+          </div>
+        </div>
+      </div>
+    </div>
 
-I am a Master of Professional Studies in Informatics student at Northeastern University with a background in Electrical and Electronics Engineering. My work focuses on analytics, cloud technologies and building data-driven systems that support informed decision making.
+    <!-- Capstone -->
+    <h2 id="capstone">Capstone Project — HVALIDATE</h2>
+    <div class="grid">
+      <div class="proj col-8">
+        <h3>Presenteeism Clinical Validation Dashboard</h3>
+        <p>
+          HVALIDATE is a clinical validation dashboard designed to help evaluate productivity loss caused by
+          presenteeism while protecting employee privacy. The system focuses on <b>cohort-level outputs only</b>
+          (no individual drill-down) and supports stakeholders in understanding trends, severity staging, and
+          estimated economic impact.
+        </p>
 
-</p>
+        <div class="twoCol">
+          <div>
+            <b>My Role</b>
+            <ul>
+              <li>Dashboard development and visual design choices</li>
+              <li>Analytics workflow logic (validation, scoring, aggregation)</li>
+              <li>Security and privacy-by-design documentation and controls</li>
+            </ul>
+          </div>
+          <div>
+            <b>Key Capabilities</b>
+            <ul>
+              <li>Upload synthetic survey CSV aligned to required schema</li>
+              <li>Compute validation rate and highlight inconsistencies</li>
+              <li>Severity staging metrics and cohort summaries</li>
+              <li>Economic impact estimates at an aggregated level</li>
+            </ul>
+          </div>
+        </div>
 
-</section>
+        <div class="callout">
+          <b>Privacy-by-Design Summary</b><br>
+          We use synthetic data for demonstrations; outputs are aggregated at cohort level; small groups are suppressed
+          using k-anonymity thresholds; and access control planning includes IAM-based authorization for online deployment.
+        </div>
 
-<section>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">Data Validation</span>
+          <span class="tag">Cohort Analytics</span>
+          <span class="tag">HIPAA-aligned Principles</span>
+          <span class="tag">GCP Deployment (planned)</span>
+        </div>
 
-<h2>Capstone Project – HVALIDATE</h2>
+        <p class="muted small">
+          Optional: Add a screenshot of your dashboard by uploading an image to the repo and linking it here.
+          Example: <code class="inline">&lt;img src="assets/dashboard.png" style="width:100%;border-radius:12px" /&gt;</code>
+        </p>
+      </div>
 
-<div class="project">
+      <div class="proj col-4">
+        <h3>Metrics (What we track)</h3>
+        <ul>
+          <li><b>Validation Rate</b>: % of records passing rule checks</li>
+          <li><b>Inconsistency Flags</b>: mismatches or out-of-range values</li>
+          <li><b>Severity Staging</b>: distribution across low/medium/high stages</li>
+          <li><b>Cohort Summaries</b>: group-level counts, proportions, trends</li>
+          <li><b>Economic Impact</b>: estimated cost ranges at cohort level</li>
+        </ul>
 
-<p><b>Description:</b>  
-HVALIDATE is a privacy-preserving clinical validation dashboard designed to analyze productivity loss caused by presenteeism using cohort-level analytics.</p>
+        <h3 style="margin-top:14px">Deployment</h3>
+        <p class="small muted">
+          Currently runs locally on laptops (Python + Streamlit). Online deployment targets a controlled environment
+          with IAM access, HTTPS, and centralized logging.
+        </p>
+      </div>
+    </div>
 
-<p><b>My Role:</b>  
-Dashboard development, analytics pipeline design and cloud deployment.</p>
+    <!-- Projects -->
+    <h2 id="projects">Project Samples</h2>
+    <div class="grid">
+      <div class="proj col-6">
+        <h3>Predictive Analytics (Regression & Model Evaluation)</h3>
+        <p>
+          Built regression-based models to examine relationships between variables, evaluate fit using metrics
+          (e.g., R² / error measures), and interpret results in a clear, decision-focused narrative.
+        </p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Regression</span>
+          <span class="tag">Model Evaluation</span>
+          <span class="tag">Interpretation</span>
+        </div>
+        <p class="muted small">
+          Add: link to notebook/report once you upload it (or keep private and show screenshots only).
+        </p>
+      </div>
 
-<p><b>Skills Demonstrated:</b>  
-Python, Streamlit, Data Validation, Google Cloud Platform, IAM Security.</p>
+      <div class="proj col-6">
+        <h3>Database Management & Query Design</h3>
+        <p>
+          Designed normalized schemas, wrote structured queries to support reporting needs, and applied good data
+          management practices for integrity and maintainability.
+        </p>
+        <div class="tags">
+          <span class="tag">SQL</span>
+          <span class="tag">Schema Design</span>
+          <span class="tag">Data Integrity</span>
+          <span class="tag">Analytics Queries</span>
+        </div>
+      </div>
 
-</div>
+      <div class="proj col-6">
+        <h3>Data Visualization & Insights</h3>
+        <p>
+          Developed dashboards and visual summaries to communicate key findings clearly using clean layouts,
+          appropriate chart choices and stakeholder-friendly explanations.
+        </p>
+        <div class="tags">
+          <span class="tag">Dashboards</span>
+          <span class="tag">Storytelling</span>
+          <span class="tag">Stakeholder Reporting</span>
+        </div>
+      </div>
 
-</section>
+      <div class="proj col-6">
+        <h3>Cloud & DevOps Basics (CI/CD + Deployment Planning)</h3>
+        <p>
+          Planned an automated build and deployment workflow and documented security considerations such as
+          IAM permissions, HTTPS-only access, and audit-friendly logging.
+        </p>
+        <div class="tags">
+          <span class="tag">GitHub</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">IAM</span>
+          <span class="tag">Cloud Deployment</span>
+        </div>
+      </div>
+    </div>
 
-<section>
+    <!-- Skills -->
+    <h2 id="skills">Skills & Tools</h2>
+    <div class="grid">
+      <div class="section-card col-6">
+        <b>Programming</b>
+        <p class="muted">Python • R • SQL</p>
 
-<h2>Technical Skills</h2>
+        <b>Analytics</b>
+        <p class="muted">Data preparation • Visualization • Regression • Model evaluation</p>
 
-<p>
+        <b>Data Engineering</b>
+        <p class="muted">ETL concepts • Validation rules • Aggregation • Data quality checks</p>
+      </div>
 
-Python • R • SQL • Streamlit • Data Visualization • Google Cloud Platform • Git • Analytics
+      <div class="section-card col-6">
+        <b>Cloud & DevOps</b>
+        <p class="muted">Google Cloud (planned deployment) • Git/GitHub • CI/CD planning</p>
 
-</p>
+        <b>Security & Governance</b>
+        <p class="muted">IAM concepts • Privacy-by-design • Cohort-level reporting • k-anonymity suppression</p>
 
-</section>
+        <b>Professional</b>
+        <p class="muted">Team collaboration • Documentation • Stakeholder communication</p>
+      </div>
+    </div>
 
-<section>
+    <!-- Resume -->
+    <h2>Resume</h2>
+    <div class="section-card">
+      <p>
+        <b>Resume / CV:</b> Add your PDF to the repo and link it here.
+      </p>
+      <p class="muted small">
+        Example steps: upload <code class="inline">Dennis_Bofah_Resume.pdf</code> into the repository root,
+        then change the link below to match the file name.
+      </p>
+      <p>
+        <a class="btn primary" href="Dennis_Bofah_Resume.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a>
+      </p>
+    </div>
 
-<h2>Contact</h2>
+    <!-- Contact -->
+    <h2 id="contact">Contact</h2>
+    <div class="grid">
+      <div class="section-card col-6">
+        <b>Email</b>
+        <p class="muted">Replace with your professional email</p>
+        <p><a href="mailto:your_email@example.com">dennisbofah@gmail.com</a></p>
+      </div>
+      <div class="section-card col-6">
+        <b>LinkedIn</b>
+        <p class="muted">Replace with your LinkedIn profile link</p>
+        <p><a href="#" target="_blank" rel="noopener">LinkedIn Profile</a></p>
+      </div>
+    </div>
 
-<p>Email: your email</p>
-
-<p>LinkedIn: your LinkedIn profile</p>
-
-</section>
-
-<footer>
-
-© 2026 Dennis Bofah
-
-</footer>
-
+    <footer>
+      <div>© 2026 Dennis Bofah</div>
+      <div class="small">Hosted on GitHub Pages • Built for a professional Informatics portfolio</div>
+    </footer>
+  </div>
 </body>
-
 </html>
