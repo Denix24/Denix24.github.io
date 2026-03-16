@@ -1,341 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dennis Bofah | Informatics Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dennis Bofah | Informatics Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b1220;
+      color: #ffffff;
+      line-height: 1.6;
+    }
 
-<style>
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
 
-body{
-font-family: Arial, Helvetica, sans-serif;
-margin:0;
-background:#0b1220;
-color:#ffffff;
-}
+    header {
+      margin-bottom: 40px;
+    }
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:40px;
-}
+    h1, h2, h3 {
+      color: #ffffff;
+      margin-top: 0;
+    }
 
-h1,h2,h3{
-color:#ffffff;
-}
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
 
-p{
-color:#d0d6e0;
-}
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
 
-header{
-margin-bottom:40px;
-}
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
 
-nav a{
-margin-right:15px;
-color:#5aa7ff;
-text-decoration:none;
-font-weight:bold;
-}
+    p, li {
+      color: #d0d6e0;
+      font-size: 1rem;
+    }
 
-.card{
-background:#111b33;
-padding:20px;
-border-radius:12px;
-margin-bottom:20px;
-}
+    nav {
+      margin-top: 15px;
+      margin-bottom: 20px;
+    }
 
-.section{
-margin-top:40px;
-}
+    nav a {
+      margin-right: 18px;
+      color: #5aa7ff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
 
-.skills span{
-background:#1b2a4d;
-padding:6px 10px;
-margin:5px;
-border-radius:8px;
-display:inline-block;
-}
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-.contact a{
-color:#6ee7b7;
-text-decoration:none;
-}
+    .hero-card,
+    .card {
+      background: linear-gradient(135deg, #16213e, #1f3b73);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    }
 
-footer{
-margin-top:50px;
-border-top:1px solid #333;
-padding-top:20px;
-color:#888;
-}
+    .section {
+      margin-top: 40px;
+    }
 
-</style>
+    .button {
+      display: inline-block;
+      background: #0073e6;
+      color: white;
+      padding: 10px 18px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .button:hover {
+      background: #005bb5;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .skill-box {
+      background: #111b33;
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .contact a {
+      color: #6ee7b7;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #2a3550;
+      color: #9aa4b2;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .subheading {
+      color: #9ecbff;
+      font-weight: bold;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
-
-<header>
-
-<h1>Dennis Bofah</h1>
-
-<p>Master of Professional Studies in Informatics — Northeastern University</p>
-
-<nav>
-<a href="#about">About</a>
-<a href="#capstone">Capstone</a>
-<a href="#projects">Projects</a>
-<a href="#skills">Skills</a>
-<a href="#contact">Contact</a>
-</nav>
-
-</header>
-
-<div class="card">
-
-<h2>Informatics Portfolio</h2>
-
-<p>
-This portfolio highlights my work in data analytics, data engineering, and cloud-based
-information systems. My projects focus on building analytical systems that support
-decision-making while maintaining strong standards for data governance,
-privacy, and security.
-</p>
-
-</div>
-
-<div class="section" id="about">
-<h2 id="projects">Project Highlights</h2>
-
-<div class="card">
-<h3>Predictive Housing Price Model</h3>
-<p>
-Developed regression-based predictive models to analyze relationships between property features and housing prices.
-</p>
-
-<p><b>My Role:</b> Data cleaning, feature engineering, regression modeling, and evaluation.</p>
-
-<p><b>Skills:</b> Python, pandas, scikit-learn, regression analysis, model evaluation.</p>
-</div>
-
-
-<div class="card">
-<h3>Hospital Bed Utilization Data Warehouse</h3>
-<p>
-Designed and implemented a dimensional data warehouse model using hospital bed utilization datasets to support healthcare analytics.
-</p>
-
-<p><b>My Role:</b> SQL query development, dimensional modeling, and analytical reporting.</p>
-
-<p><b>Skills:</b> SQL, database design, data warehousing, analytics queries.</p>
-</div>
-
-
-<div class="card">
-<h3>Customer Marketing Response Analysis</h3>
-<p>
-Performed exploratory data analysis and predictive modeling to analyze customer responses to marketing campaigns.
-</p>
-
-<p><b>My Role:</b> Data preprocessing, statistical analysis, and visualization.</p>
-
-<p><b>Skills:</b> Python, R, EDA, data visualization, statistical modeling.</p>
-</div>
- 
-
- <p>
-<a href="./Dennis_Bofah_Resume.pdf" target="_blank" 
-style="background:#0073e6;color:white;padding:10px 18px;text-decoration:none;border-radius:6px;">
-Download My Resume
-</a>
-</p> 
-
-<h2>About Me</h2>
-
-<div class="card">
-
-<p>
-I am a graduate student in the Master of Professional Studies in Informatics program
-at Northeastern University. My academic focus combines analytics,
-data engineering, and cloud computing to build reliable and scalable
-data-driven systems.
-</p>
-
-<p>
-My background in Electrical and Electronics Engineering provides a strong
-technical foundation which I now apply to modern data systems, analytics,
-and decision-support dashboards.
-</p>
-
-<p>
-I am particularly interested in designing analytics platforms that are
-secure, well-governed, and capable of supporting organizational
-decision-making.
-</p>
-
-</div>
-
-</div>
-
-<div class="section" id="capstone">
-
-<h2>Capstone Project — HVALIDATE</h2>
-
-<div class="card">
-
-<h3>Presenteeism Clinical Validation Dashboard</h3>
-
-<p>
-HVALIDATE is a dashboard designed to evaluate the impact of
-presenteeism in the workplace while preserving employee privacy.
-The system processes survey data, validates responses, and generates
-cohort-level insights that help decision-makers understand productivity
-loss trends.
-</p>
-
-<h3>Key Features</h3>
-
-<ul>
-
-<li>Data validation and response consistency checks</li>
-
-<li>Severity stage metrics showing distribution across risk levels</li>
-
-<li>Cohort-based reporting to protect individual privacy</li>
-
-<li>Aggregated analytics outputs for leadership insights</li>
-
-<li>Cost impact estimation of productivity loss</li>
-
-</ul>
-
-<h3>Privacy and Security Approach</h3>
-
-<ul>
-
-<li>Use of synthetic datasets for demonstration purposes</li>
-
-<li>Cohort-level outputs rather than individual-level reporting</li>
-
-<li>Minimum group size thresholds to maintain anonymity</li>
-
-<li>Access control planning using IAM-based permissions</li>
-
-</ul>
-
-<h3>Technology Stack</h3>
-
-<p>
-
-Python • Streamlit • Data Validation Logic • GitHub • Planned Cloud Deployment
-
-</p>
-
-</div>
-
-</div>
-
-<div class="section" id="projects">
-
-<h2>Project Highlights</h2>
-
-<div class="card">
-
-<h3>Predictive Analytics Modeling</h3>
-
-<p>
-Developed regression-based analytical models to explore relationships
-between variables and evaluate model performance using statistical metrics.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Database Design and Query Development</h3>
-
-<p>
-Designed relational schemas and wrote SQL queries to support
-analytical reporting and maintain data integrity across systems.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Data Visualization and Dashboard Development</h3>
-
-<p>
-Created analytical dashboards that transform complex datasets
-into visual insights for decision-makers.
-</p>
-
-</div>
-
-</div>
-
-<div class="section" id="skills">
-
-<h2>Skills</h2>
-
-<div class="card skills">
-
-<span>Python</span>
-<span>SQL</span>
-<span>R</span>
-<span>Data Analytics</span>
-<span>Dashboard Development</span>
-<span>Data Engineering Concepts</span>
-<span>Cloud Deployment Concepts</span>
-<span>IAM Security Concepts</span>
-
-</div>
-
-</div>
-
-<div class="section" id="contact">
-
-<h2>Contact</h2>
-
-<div class="card contact">
-
-<p><strong>Professional Email</strong></p>
-<p>
-<a href="mailto:dennisbofah@gmail.com">dennisbofah@gmail.com</a>
-</p>
-
-<p><strong>University Email</strong></p>
-<p>
-<a href="mailto:bofah.d@northeastern.edu">bofah.d@northeastern.edu</a>
-</p>
-
-<p><strong>Backup Email</strong></p>
-<p>
-<a href="mailto:bofahdennis8@gmail.com">bofahdennis8@gmail.com</a>
-</p>
-
-<p><strong>LinkedIn</strong></p>
-<p>
-<a href="https://linkedin.com/in/dennisbofah" target="_blank">
-linkedin.com/in/dennisbofah
-</a>
-</p>
-
-</div>
-
-</div>
-
-<footer>
-
-<p>© 2026 Dennis Bofah</p>
-
-<p>Hosted on GitHub Pages</p>
-
-</footer>
-
-</div>
+  <div class="container">
+
+    <header>
+      <h1>Dennis Bofah</h1>
+      <p><strong>Master of Professional Studies in Informatics — Northeastern University</strong></p>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
+        <a href="#capstone">Capstone</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="hero-card">
+      <h2>Informatics Portfolio</h2>
+      <p>
+        This portfolio presents a curated collection of my academic and project work in the Master of Professional Studies in Informatics program. My work focuses on analytics, data engineering, and cloud-based information systems that support organizational decision-making while maintaining strong standards for privacy, security, and data governance.
+      </p>
+      <p>
+        With a background in Electrical and Electronics Engineering, I bring a systems-thinking perspective to modern data environments. My projects demonstrate how structured data pipelines, analytics dashboards, and secure information systems can transform complex datasets into actionable insights.
+      </p>
+    </div>
+
+    <section class="section" id="about">
+      <h2>About Me</h2>
+      <div class="card">
+        <p>
+          I am a graduate student in the Master of Professional Studies in Informatics program at Northeastern University. My academic focus combines data analytics, data engineering, and cloud computing to build reliable and scalable data-driven systems that support organizational decision-making.
+        </p>
+        <p>
+          I hold a background in Electrical and Electronics Engineering, which gave me strong technical foundations in systems thinking, structured problem-solving, and engineering analysis. I now apply this engineering perspective to modern information systems, analytics platforms, and dashboard-based decision support tools.
+        </p>
+        <p>
+          Through my graduate coursework and projects, I have strengthened my skills in Python, SQL, R, data visualization, and cloud technologies. I am particularly interested in building analytics systems that are secure, well-governed, and capable of supporting complex environments such as healthcare, infrastructure management, and engineering-driven operational systems.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="resume">
+      <h2>Resume</h2>
+      <div class="card">
+        <p>
+          My most current resume is available below.
+        </p>
+        <a href="./Dennis_Bofah_Resume.pdf" target="_blank" class="button">Download My Resume</a>
+      </div>
+    </section>
+
+    <section class="section" id="capstone">
+      <h2>Capstone Project — HVALIDATE</h2>
+      <div class="card">
+        <h3>Presenteeism Clinical Validation Dashboard</h3>
+        <p>
+          HVALIDATE is a healthcare analytics dashboard designed to evaluate the impact of presenteeism in workplace environments while preserving employee privacy. The system processes survey data, validates responses, and generates cohort-level insights that help organizations understand productivity loss trends and support evidence-based decision-making.
+        </p>
+
+        <div class="subheading">My Role</div>
+        <p>
+          I contributed to the design of the analytics pipeline, dashboard logic, and privacy-preserving reporting framework. My work focused on ensuring that raw survey responses could be validated, transformed, and presented as meaningful cohort-level metrics.
+        </p>
+
+        <div class="subheading">Key Features</div>
+        <ul>
+          <li>Data validation and response consistency checks</li>
+          <li>Severity stage metrics showing distribution across risk levels</li>
+          <li>Cohort-based reporting to protect individual privacy</li>
+          <li>Aggregated analytics outputs for leadership insights</li>
+          <li>Cost impact estimation of productivity loss</li>
+        </ul>
+
+        <div class="subheading">Privacy and Security Approach</div>
+        <ul>
+          <li>Use of synthetic datasets for demonstration purposes</li>
+          <li>Cohort-level outputs rather than individual-level reporting</li>
+          <li>Minimum group-size thresholds to maintain anonymity</li>
+          <li>Planned IAM-based access control for secure online deployment</li>
+        </ul>
+
+        <div class="subheading">Skills Demonstrated</div>
+        <p>
+          Python, Streamlit, data validation, dashboard design, cohort analytics, privacy-by-design, cloud deployment planning
+        </p>
+
+        <div class="subheading">What I Learned</div>
+        <p>
+          This project strengthened my ability to balance analytics value with privacy protection. It also deepened my understanding of how dashboards, data validation, and governance principles must work together to support secure and meaningful organizational intelligence.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <h2>Project Highlights</h2>
+
+      <div class="card">
+        <h3>Predictive Analytics Modeling</h3>
+        <p>
+          Developed predictive analytical models to examine relationships between variables and evaluate model performance using statistical techniques. The project focused on identifying key predictors that influence outcomes and showing how predictive analytics can support evidence-based decision-making.
+        </p>
+
+        <div class="subheading">My Role</div>
+        <p>
+          I handled data preprocessing, feature engineering, model development, and the interpretation of results.
+        </p>
+
+        <div class="subheading">Skills Demonstrated</div>
+        <p>
+          Python, statistical analysis, regression modeling, data cleaning, model evaluation
+        </p>
+
+        <div class="subheading">What I Learned</div>
+        <p>
+          This project improved my ability to connect technical analytical models with practical business insights and strengthened my confidence in evaluating model performance critically.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Database Design and Query Development</h3>
+        <p>
+          Designed relational database schemas and developed SQL queries to support structured data storage and analytical reporting. The project focused on efficient database organization, strong data integrity, and reliable analytics outputs.
+        </p>
+
+        <div class="subheading">My Role</div>
+        <p>
+          I was responsible for schema design, SQL query development, and analytical reporting.
+        </p>
+
+        <div class="subheading">Skills Demonstrated</div>
+        <p>
+          SQL, relational database design, query optimization, data warehousing concepts, structured reporting
+        </p>
+
+        <div class="subheading">What I Learned</div>
+        <p>
+          This project deepened my understanding of how well-designed databases serve as the foundation for reliable analytics systems and scalable decision-support environments.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Data Visualization and Dashboard Development</h3>
+        <p>
+          Created interactive analytical dashboards that transformed complex datasets into clear visual insights for stakeholders and decision-makers. The dashboards were designed to support reporting, trend analysis, and performance monitoring.
+        </p>
+
+        <div class="subheading">My Role</div>
+        <p>
+          I worked on data preparation, dashboard design, and visualization development.
+        </p>
+
+        <div class="subheading">Skills Demonstrated</div>
+        <p>
+          Data visualization, dashboard development, analytical storytelling, stakeholder reporting
+        </p>
+
+        <div class="subheading">What I Learned</div>
+        <p>
+          This project showed me the importance of presenting technical findings in a way that is clear, concise, and meaningful to both technical and non-technical audiences.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <h2>Skills and Technologies</h2>
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h3>Programming</h3>
+          <p>Python<br>SQL<br>R Programming</p>
+        </div>
+
+        <div class="skill-box">
+          <h3>Analytics</h3>
+          <p>Statistical Analysis<br>Regression Modeling<br>Predictive Analytics<br>Data Interpretation</p>
+        </div>
+
+        <div class="skill-box">
+          <h3>Data Engineering</h3>
+          <p>Data Cleaning<br>ETL Concepts<br>Data Validation<br>Analytics Pipelines</p>
+        </div>
+
+        <div class="skill-box">
+          <h3>Databases</h3>
+          <p>Relational Database Design<br>SQL Query Development<br>Data Warehousing Concepts</p>
+        </div>
+
+        <div class="skill-box">
+          <h3>Visualization</h3>
+          <p>Dashboard Development<br>Data Visualization<br>Analytical Storytelling</p>
+        </div>
+
+        <div class="skill-box">
+          <h3>Cloud & Systems</h3>
+          <p>GitHub<br>Cloud Computing Concepts<br>Information Systems Architecture<br>IAM Security Concepts</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p><strong>Professional Email:</strong><br>
+          <a href="mailto:dennisbofah@gmail.com">dennisbofah@gmail.com</a>
+        </p>
+
+        <p><strong>University Email:</strong><br>
+          <a href="mailto:bofah.d@northeastern.edu">bofah.d@northeastern.edu</a>
+        </p>
+
+        <p><strong>Backup Email:</strong><br>
+          <a href="mailto:bofahdennis8@gmail.com">bofahdennis8@gmail.com</a>
+        </p>
+
+        <p><strong>LinkedIn:</strong><br>
+          <a href="https://linkedin.com/in/dennisbofah" target="_blank">linkedin.com/in/dennisbofah</a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Dennis Bofah</p>
+      <p>Hosted on GitHub Pages</p>
+    </footer>
+
+  </div>
 
 </body>
 </html>
