@@ -10,28 +10,57 @@
       scroll-behavior: smooth;
     }
 
+    :root {
+      --bg: #08111f;
+      --bg2: #0b1220;
+      --card1: #16213e;
+      --card2: #1f3b73;
+      --accent: #66b2ff;
+      --accent2: #7ef0c5;
+      --text: #ffffff;
+      --muted: #d0d6e0;
+      --border: #24436f;
+      --button: #0073e6;
+      --button-hover: #005bb5;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #0b1220;
-      color: #ffffff;
+      background: var(--bg2);
+      color: var(--text);
       line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(180deg, var(--bg), var(--bg2));
     }
 
     .container {
       max-width: 1100px;
       margin: auto;
       padding: 40px 20px;
+      position: relative;
+      z-index: 1;
     }
 
     .hero {
       padding: 40px;
-      border-radius: 14px;
-      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1f3b73);
+      border-radius: 16px;
+      background: linear-gradient(-45deg, #10233f, #173357, #22497a, #183b63);
       background-size: 400% 400%;
-      animation: gradientMove 12s ease infinite;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      animation: gradientMove 14s ease infinite;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
       margin-bottom: 30px;
+      border: 1px solid rgba(255,255,255,0.06);
     }
 
     @keyframes gradientMove {
@@ -41,73 +70,79 @@
     }
 
     h1, h2, h3 {
-      color: #ffffff;
+      color: var(--text);
       margin-top: 0;
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 2.7rem;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.25);
     }
 
     h2 {
       font-size: 1.8rem;
       margin-bottom: 15px;
-      border-bottom: 2px solid #1f4e79;
+      border-bottom: 2px solid var(--accent);
       padding-bottom: 8px;
     }
 
     h3 {
       font-size: 1.25rem;
       margin-bottom: 10px;
-      color: #9ecbff;
+      color: #b7d9ff;
     }
 
     p, li {
-      color: #d0d6e0;
+      color: var(--muted);
       font-size: 1rem;
     }
 
     #typing {
-      color: #5aa7ff;
-      font-size: 1.1rem;
+      color: var(--accent2);
+      font-size: 1.05rem;
       margin-top: 6px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-weight: bold;
       min-height: 24px;
     }
 
     nav {
-      margin-top: 15px;
-      margin-bottom: 10px;
+      margin-top: 16px;
+      margin-bottom: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
     nav a {
-      margin-right: 18px;
-      color: #5aa7ff;
+      color: var(--accent);
       text-decoration: none;
       font-weight: bold;
       font-size: 0.95rem;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, transform 0.2s ease;
     }
 
     nav a:hover {
-      color: #9ecbff;
+      color: #cce7ff;
+      transform: translateY(-1px);
       text-decoration: underline;
     }
 
     .hero-card,
     .card {
-      background: linear-gradient(135deg, #16213e, #1f3b73);
+      background: linear-gradient(135deg, var(--card1), var(--card2));
       border-radius: 14px;
       padding: 24px;
       margin-bottom: 24px;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.05);
     }
 
     .card:hover,
-    .hero-card:hover {
+    .hero-card:hover,
+    .skill-box:hover {
       transform: translateY(-6px);
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
     }
@@ -118,7 +153,7 @@
 
     .button {
       display: inline-block;
-      background: #0073e6;
+      background: var(--button);
       color: white;
       padding: 10px 18px;
       text-decoration: none;
@@ -129,7 +164,7 @@
     }
 
     .button:hover {
-      background: #005bb5;
+      background: var(--button-hover);
       transform: scale(1.05);
     }
 
@@ -144,26 +179,22 @@
       border-radius: 12px;
       padding: 18px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .skill-box:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255,255,255,0.05);
     }
 
     .contact a {
-      color: #6ee7b7;
+      color: var(--accent2);
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     .contact a:hover {
-      color: #9ef7d7;
+      color: #cffff0;
       text-decoration: underline;
     }
 
     .subheading {
-      color: #9ecbff;
+      color: #b7d9ff;
       font-weight: bold;
       margin-top: 18px;
       margin-bottom: 8px;
@@ -192,9 +223,35 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 28px 22px;
+      }
+
+      h1 {
+        font-size: 2.1rem;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <canvas id="particles"></canvas>
 
   <div class="container">
 
@@ -453,6 +510,68 @@
     document.querySelectorAll(".fade-in").forEach((el) => {
       observer.observe(el);
     });
+
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    const particles = [];
+    const particleCount = 55;
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        size: Math.random() * 2 + 1
+      });
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(102,178,255,0.6)";
+        ctx.fill();
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const q = particles[j];
+          const dx = p.x - q.x;
+          const dy = p.y - q.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 120) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(q.x, q.y);
+            ctx.strokeStyle = "rgba(126,240,197,0.08)";
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(animateParticles);
+    }
+
+    animateParticles();
   </script>
 
 </body>
