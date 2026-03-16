@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dennis Bofah | Informatics Portfolio</title>
+<header class="hero">
+  <h1>Dennis Bofah</h1>
+  <p id="typing"></p>
+  <p><strong>Master of Professional Studies in Informatics — Northeastern University</strong></p>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#resume">Resume</a>
+    <a href="#capstone">Capstone</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
   <style>
     html {
@@ -159,6 +169,54 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+  html {
+  scroll-behavior: smooth;
+}
+
+.hero {
+  padding: 40px;
+  border-radius: 14px;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1f3b73);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  margin-bottom: 30px;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#typing {
+  color: #5aa7ff;
+  font-size: 1.1rem;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  min-height: 24px;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
 }
   <div class="container">
 
@@ -391,6 +449,34 @@
     </footer>
 
   </div>
+  <script>
+  // Typing effect
+  const text = "Data Analytics | Data Engineering | Cloud-Based Information Systems";
+  let i = 0;
+
+  function typingEffect() {
+    if (i < text.length) {
+      document.getElementById("typing").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typingEffect, 40);
+    }
+  }
+
+  typingEffect();
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll(".fade-in").forEach((el) => {
+    observer.observe(el);
+  });
+</script>
 
 </body>
 </html>
