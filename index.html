@@ -6,6 +6,9 @@
   <title>Dennis Bofah | Informatics Portfolio</title>
 
   <style>
+    html {
+  scroll-behavior: smooth;
+}
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -76,6 +79,11 @@
       padding: 24px;
       margin-bottom: 24px;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
     }
 
     .section {
@@ -140,7 +148,18 @@
   </style>
 </head>
 <body>
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+}
 
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   <div class="container">
 
     <header>
@@ -168,7 +187,7 @@
       </p>
     </div>
 
-    <section class="section" id="about">
+    <section class="section fade-in" id="about">
       <h2>About Me</h2>
       <div class="card">
         <p>
@@ -185,7 +204,7 @@
       </div>
     </section>
 
-    <section class="section" id="resume">
+    <section class="section fade-in" id="resume">
       <h2>Resume</h2>
       <div class="card">
         <p>
@@ -195,7 +214,7 @@
       </div>
     </section>
 
-    <section class="section" id="capstone">
+    <section class="section fade-in" id="capstone">
       <h2>Capstone Project — HVALIDATE</h2>
       <div class="card">
         <h3>Presenteeism Clinical Validation Dashboard</h3>
@@ -235,7 +254,7 @@
       </div>
     </section>
 
-    <section class="section" id="projects">
+    <section class="section fade-in" id="projects">
       <h2>Project Highlights</h2>
 
       <div class="card">
@@ -308,7 +327,7 @@
       </div>
     </section>
 
-    <section class="section" id="skills">
+    <section class="section fade-in" id="skills">
       <h2>Skills and Technologies</h2>
       <div class="skills-grid">
 
@@ -345,7 +364,7 @@
       </div>
     </section>
 
-    <section class="section contact" id="contact">
+    <section class="section contact fade-in" id="contact">
       <h2>Contact</h2>
       <div class="card">
         <p><strong>Professional Email:</strong><br>
