@@ -1,24 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<header class="hero">
-  <h1>Dennis Bofah</h1>
-  <p id="typing"></p>
-  <p><strong>Master of Professional Studies in Informatics — Northeastern University</strong></p>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#resume">Resume</a>
-    <a href="#capstone">Capstone</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dennis Bofah | Informatics Portfolio</title>
 
   <style>
     html {
-  scroll-behavior: smooth;
-}
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -33,8 +24,20 @@
       padding: 40px 20px;
     }
 
-    header {
-      margin-bottom: 40px;
+    .hero {
+      padding: 40px;
+      border-radius: 14px;
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1f3b73);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      margin-bottom: 30px;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     h1, h2, h3 {
@@ -65,9 +68,18 @@
       font-size: 1rem;
     }
 
+    #typing {
+      color: #5aa7ff;
+      font-size: 1.1rem;
+      margin-top: 6px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      min-height: 24px;
+    }
+
     nav {
       margin-top: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     nav a {
@@ -76,9 +88,11 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 0.95rem;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
+      color: #9ecbff;
       text-decoration: underline;
     }
 
@@ -90,10 +104,12 @@
       margin-bottom: 24px;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-}
+    }
+
+    .card:hover,
+    .hero-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
     }
 
     .section {
@@ -109,10 +125,12 @@
       border-radius: 6px;
       font-weight: bold;
       margin-top: 10px;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
     .button:hover {
       background: #005bb5;
+      transform: scale(1.05);
     }
 
     .skills-grid {
@@ -125,15 +143,34 @@
       background: #111b33;
       border-radius: 12px;
       padding: 18px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
     }
 
     .contact a {
       color: #6ee7b7;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
 
     .contact a:hover {
+      color: #9ef7d7;
       text-decoration: underline;
+    }
+
+    .subheading {
+      color: #9ecbff;
+      font-weight: bold;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      padding-left: 20px;
     }
 
     footer {
@@ -145,84 +182,25 @@
       text-align: center;
     }
 
-    ul {
-      padding-left: 20px;
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
-    .subheading {
-      color: #9ecbff;
-      font-weight: bold;
-      margin-top: 18px;
-      margin-bottom: 8px;
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s ease forwards;
-}
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-  html {
-  scroll-behavior: smooth;
-}
-
-.hero {
-  padding: 40px;
-  border-radius: 14px;
-  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1f3b73);
-  background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  margin-bottom: 30px;
-}
-
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-#typing {
-  color: #5aa7ff;
-  font-size: 1.1rem;
-  margin-top: 6px;
-  margin-bottom: 10px;
-  font-weight: bold;
-  min-height: 24px;
-}
-
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
   <div class="container">
 
-    <header>
+    <header class="hero">
       <h1>Dennis Bofah</h1>
-      <p><strong>Data Analytics | Data Engineering | Cloud-Based Information Systems</strong></p>
+      <p id="typing"></p>
       <p><strong>Master of Professional Studies in Informatics — Northeastern University</strong></p>
 
       <nav>
@@ -235,7 +213,7 @@
       </nav>
     </header>
 
-    <div class="hero-card">
+    <div class="hero-card fade-in">
       <h2>Portfolio Overview</h2>
       <p>
         This portfolio presents a curated collection of my academic and project work in the Master of Professional Studies in Informatics program. My work focuses on analytics, data engineering, and cloud-based information systems that support organizational decision-making while maintaining strong standards for privacy, security, and data governance.
@@ -422,7 +400,7 @@
       </div>
     </section>
 
-    <section class="section contact fade-in" id="contact">
+    <section class="section fade-in contact" id="contact">
       <h2>Contact</h2>
       <div class="card">
         <p><strong>Professional Email:</strong><br>
@@ -449,34 +427,33 @@
     </footer>
 
   </div>
+
   <script>
-  // Typing effect
-  const text = "Data Analytics | Data Engineering | Cloud-Based Information Systems";
-  let i = 0;
+    const text = "Data Analytics | Data Engineering | Cloud-Based Information Systems";
+    let i = 0;
 
-  function typingEffect() {
-    if (i < text.length) {
-      document.getElementById("typing").innerHTML += text.charAt(i);
-      i++;
-      setTimeout(typingEffect, 40);
-    }
-  }
-
-  typingEffect();
-
-  // Fade-in on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
+    function typingEffect() {
+      if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typingEffect, 40);
       }
-    });
-  }, { threshold: 0.15 });
+    }
 
-  document.querySelectorAll(".fade-in").forEach((el) => {
-    observer.observe(el);
-  });
-</script>
+    typingEffect();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll(".fade-in").forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
 
 </body>
 </html>
